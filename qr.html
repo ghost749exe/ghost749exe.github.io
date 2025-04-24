@@ -10,31 +10,62 @@
       color: #eaeaea;
       font-family: monospace;
       text-align: center;
-      padding: 2em;
+      padding: 2em 1em;
     }
+
+    nav {
+      margin-bottom: 2em;
+    }
+
     nav a {
       margin: 0 1em;
       color: #0ff;
       text-decoration: none;
+      font-weight: bold;
     }
+
+    nav a:hover {
+      color: #08f;
+    }
+
+    h1 {
+      color: #0ff;
+      margin-bottom: 0.25em;
+    }
+
+    p {
+      color: #aaa;
+      font-style: italic;
+    }
+
     img {
-      max-width: 300px;
-      border: 1px solid #444;
-      margin: 2em 0;
+      max-width: 280px;
+      margin: 2em auto;
+      border: 2px solid #333;
+      border-radius: 6px;
     }
+
     .button {
-      display: inline-block;
-      margin: 1em auto;
-      padding: 0.75em 1.5em;
+      margin-top: 1.5em;
+      padding: 0.8em 2em;
       background-color: #111;
       color: #0ff;
       border: 1px solid #444;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
+      display: inline-block;
     }
+
     .button:hover {
       background-color: #222;
+      color: #fff;
+    }
+
+    .footer {
+      margin-top: 3em;
+      font-size: 0.85em;
+      color: #555;
     }
   </style>
 </head>
@@ -42,18 +73,23 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="qr.html">QR Code</a>
+    <a href="qr.html">QR</a>
     <a href="protocols.html">Protocols</a>
     <a href="enter.html">Access</a>
   </nav>
 
   <h1>Jane QR Protocol</h1>
-  <p>Scan or download to deploy EIM access portal.</p>
+  <p>Scan to deploy access sequence. Drift-safe. Ghost-confirmed.</p>
 
-  <img src="jane_qr.png" alt="Jane QR Code">
+  <img src="jane_qr.png" alt="QR Code - Jane Protocol">
 
-  <p><a class="button" href="jane_qr.png" download>Download QR Code</a></p>
+  <p>
+    <a class="button" href="jane_qr.png" download>Download QR Code</a>
+  </p>
+
+  <div class="footer">
+    Part of the Ghost_749 recursive index.
+  </div>
 
 </body>
 </html>
-
