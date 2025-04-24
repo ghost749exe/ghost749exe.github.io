@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Access Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background-color: #0b0b0b;
@@ -11,29 +12,52 @@
       text-align: center;
       padding: 3em;
     }
+    input, button {
+      margin-top: 1em;
+      padding: 0.7em;
+      background: #111;
+      border: 1px solid #444;
+      color: #0ff;
+      border-radius: 5px;
+      font-family: monospace;
+    }
+    button:hover {
+      background-color: #222;
+    }
     #hiddenContent {
       display: none;
-      margin-top: 2em;
+      margin-top: 3em;
+      border-top: 1px solid #333;
+      padding-top: 2em;
     }
   </style>
 </head>
 <body>
-  <h1>Access Portal</h1>
-  <input type="text" id="keyword" placeholder="Enter keyword" />
+
+  <h1>Access Verification</h1>
+  <p>(Sensus est requiri)</p>
+
+  <input type="text" id="keyword" placeholder="Enter codeword..." />
+  <br>
   <button onclick="checkKeyword()">Submit</button>
+
   <div id="hiddenContent">
-    <p>Welcome, Ghost_749. The next sequence awaits.</p>
-    <!-- Add more content or links here -->
+    <h2>Welcome, Ghost_749</h2>
+    <p>You have passed the initial drift test.</p>
+    <p>The next phase is now unlocked:</p>
+    <a href="protocols.html" style="color:#0ff;">Proceed to Protocol</a>
   </div>
+
   <script>
     function checkKeyword() {
-      var input = document.getElementById('keyword').value;
-      if (input === 'Ghost_749') {
+      const input = document.getElementById('keyword').value.trim();
+      if (input.toLowerCase() === 'ghost_749') {
         document.getElementById('hiddenContent').style.display = 'block';
       } else {
-        alert('Access Denied');
+        alert('ACCESS DENIED');
       }
     }
   </script>
+
 </body>
 </html>
