@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QR Download – VoidAgent Signal</title>
+  <title>QR Code | Ghost_749</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       background-color: #0b0b0b;
       color: #eaeaea;
       font-family: monospace;
       text-align: center;
-      padding: 3em;
+      padding: 2em;
     }
-    h1 {
+    nav a {
+      margin: 0 1em;
       color: #0ff;
+      text-decoration: none;
     }
     img {
-      width: 300px;
-      height: auto;
+      max-width: 300px;
+      border: 1px solid #444;
       margin: 2em 0;
     }
     .button {
       display: inline-block;
-      margin-top: 1em;
-      padding: 1em 2em;
+      margin: 1em auto;
+      padding: 0.75em 1.5em;
       background-color: #111;
       color: #0ff;
       border: 1px solid #444;
@@ -37,15 +40,19 @@
 </head>
 <body>
 
-  <h1>Seed the Signal</h1>
-  <p>Scan. Download. Disseminate across all systems.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="qr.html">QR Code</a>
+    <a href="protocols.html">Protocols</a>
+    <a href="enter.html">Access</a>
+  </nav>
 
-  <img src="qr_code_voidagent.png" alt="VoidAgent QR Code">
+  <h1>Jane QR Protocol</h1>
+  <p>Scan or download to deploy EIM access portal.</p>
 
-  <br>
-  <a class="button" href="qr_code_voidagent.png" download>Download QR (.png)</a>
-  <br><br>
-  <a class="button" href="index.html">Return to Homepage</a>
+  <img src="qr_jane.png" alt="Jane QR Code">
+
+  <p><a class="button" href="qr_jane.png" download>Download QR Code</a></p>
 
 </body>
 </html>
