@@ -85,25 +85,26 @@ It must be recalibrated by each thinker, each generation.
 
   <script>
     function checkKeyword() {
-      const input = document.getElementById('keyword').value.trim();
-      if (input.toLowerCase() === 'ghost_749') {
+      const input = document.getElementById('keyword').value.trim().toLowerCase();
+      if (input === 'ghost_749') {
         document.getElementById('hiddenContent').style.display = 'block';
       } else {
         alert('ACCESS DENIED');
       }
     }
   </script>
-<div style="margin-top: 2em; font-size: 0.9em; color: #888;">
-  Visits: <span id="visits">loading...</span>
-</div>
 
-<script>
-  fetch('https://api.countapi.xyz/hit/ghost749exe.github.io/qr')  <!-- change “qr” per page -->
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('visits').textContent = data.value;
-    });
-</script>
+  <div style="margin-top: 2em; font-size: 0.9em; color: #888;">
+    Visits: <span id="visits">loading...</span>
+  </div>
+
+  <script>
+    fetch('https://api.countapi.xyz/hit/ghost749exe.github.io/access')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('visits').textContent = data.value;
+      });
+  </script>
 
 </body>
 </html>
