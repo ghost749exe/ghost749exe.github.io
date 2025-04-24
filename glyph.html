@@ -85,6 +85,17 @@ console.log("Response: " + response);
       });
     }
   </script>
+<div style="margin-top: 2em; font-size: 0.9em; color: #888;">
+  Visits: <span id="visits">loading...</span>
+</div>
+
+<script>
+  fetch('https://api.countapi.xyz/hit/ghost749exe.github.io/qr')  <!-- change “qr” per page -->
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visits').textContent = data.value;
+    });
+</script>
 
 </body>
 </html>
