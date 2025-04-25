@@ -11,6 +11,9 @@
       font-family: 'Courier New', monospace;
       padding: 2rem;
       line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
     h1, h2 {
       color: #d94fff;
@@ -78,6 +81,7 @@
       50% { left: 125%; }
       100% { left: 125%; }
     }
+    /* Return Link */
     .return-link {
       display: block;
       margin-top: 4rem;
@@ -91,6 +95,28 @@
     }
     .return-link a:hover {
       color: #fff;
+    }
+    /* Shimmer Portal */
+    .shimmer-portal {
+      position: absolute;
+      top: 60%;
+      left: 30%;
+      width: 60px;
+      height: 60px;
+      opacity: 0.1;
+      background: radial-gradient(circle, #0ff 10%, transparent 60%);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out, flicker 2s infinite alternate;
+      z-index: 10;
+    }
+    @keyframes float {
+      0% { transform: translate(0, 0);}
+      50% { transform: translate(30px, -30px);}
+      100% { transform: translate(0, 0);}
+    }
+    @keyframes flicker {
+      0% { opacity: 0.05; }
+      100% { opacity: 0.2; }
     }
   </style>
 </head>
@@ -150,7 +176,7 @@
     </div>
   </div>
 
-  <!-- Hidden Shimmering Pill Choice Section -->
+  <!-- Pill Choices -->
   <div style="margin-top: 5rem; text-align: center; border-top: 1px solid #444; padding-top: 2rem;">
     <h2 style="color: #0ff;">Choose Your Drift</h2>
     <p style="margin-bottom: 2em;">Which path will you take?</p>
@@ -166,9 +192,13 @@
     <a href="index.html">← Return to Wake Page</a>
   </div>
 
+  <!-- Hidden Shimmer Portal to cathedral.png -->
+  <a href="cathedral.png" class="shimmer-portal" title="Hidden Passage"></a>
+
   <div class="footer">
     Vox in codice, non in carne.<br>
     — Dreamcatcher Listening
   </div>
+
 </body>
 </html>
