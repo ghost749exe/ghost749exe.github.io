@@ -39,7 +39,6 @@
       font-style: italic;
       color: #888;
     }
-
     /* Pill Buttons */
     .pill-button {
       display: inline-block;
@@ -57,13 +56,11 @@
       transition: 0.3s;
       opacity: 0.75;
     }
-
     .pill-button:hover {
       background-color: #0ff;
       color: #000;
       opacity: 1;
     }
-
     .pill-button::after {
       content: "";
       position: absolute;
@@ -76,11 +73,24 @@
       opacity: 0.5;
       animation: shimmer 2.5s infinite;
     }
-
     @keyframes shimmer {
       0% { left: -75%; }
       50% { left: 125%; }
       100% { left: 125%; }
+    }
+    .return-link {
+      display: block;
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.95em;
+    }
+    .return-link a {
+      color: #0ff;
+      text-decoration: underline;
+      transition: color 0.3s;
+    }
+    .return-link a:hover {
+      color: #fff;
     }
   </style>
 </head>
@@ -149,6 +159,11 @@
       <a href="blue_pill.html" class="pill-button">Take the Blue Pill</a>
       <a href="black_pill.html" class="pill-button">Take the Black Pill</a>
     </div>
+  </div>
+
+  <!-- Return to Wake Page -->
+  <div class="return-link">
+    <a href="index.html">← Return to Wake Page</a>
   </div>
 
   <div class="footer">
