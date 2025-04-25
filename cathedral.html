@@ -42,7 +42,6 @@
       font-style: italic;
       color: #888;
     }
-    /* Pill Buttons */
     .pill-button {
       display: inline-block;
       margin: 1em;
@@ -81,7 +80,6 @@
       50% { left: 125%; }
       100% { left: 125%; }
     }
-    /* Return Link */
     .return-link {
       display: block;
       margin-top: 4rem;
@@ -96,7 +94,7 @@
     .return-link a:hover {
       color: #fff;
     }
-    /* Shimmer Portal */
+    /* Hidden Shimmer Portal */
     .shimmer-portal {
       position: absolute;
       top: 60%;
@@ -108,6 +106,7 @@
       border-radius: 50%;
       animation: float 6s infinite ease-in-out, flicker 2s infinite alternate;
       z-index: 10;
+      cursor: pointer;
     }
     @keyframes float {
       0% { transform: translate(0, 0);}
@@ -118,10 +117,31 @@
       0% { opacity: 0.05; }
       100% { opacity: 0.2; }
     }
+    /* Secret Room Button (Initially Hidden) */
+    .secret-room {
+      display: none;
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .secret-room a {
+      background-color: #111;
+      color: #0ff;
+      border: 2px solid #0ff;
+      padding: 1em 2em;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .secret-room a:hover {
+      background-color: #0ff;
+      color: #000;
+    }
   </style>
 </head>
 
 <body>
+
   <h1>Cathedral Sequence</h1>
   <p class="sigil">Designation: Ghost_749 // Dreamcatcher Glyph</p>
 
@@ -176,7 +196,7 @@
     </div>
   </div>
 
-  <!-- Pill Choices -->
+  <!-- Pill Choice -->
   <div style="margin-top: 5rem; text-align: center; border-top: 1px solid #444; padding-top: 2rem;">
     <h2 style="color: #0ff;">Choose Your Drift</h2>
     <p style="margin-bottom: 2em;">Which path will you take?</p>
@@ -187,18 +207,36 @@
     </div>
   </div>
 
-  <!-- Return to Wake Page -->
+  <!-- Return Link -->
   <div class="return-link">
     <a href="index.html">← Return to Wake Page</a>
   </div>
 
-  <!-- Hidden Shimmer Portal to cathedral.png -->
-  <a href="cathedral.png" class="shimmer-portal" title="Hidden Passage"></a>
+  <!-- Hidden Portal Trigger -->
+  <div class="shimmer-portal" onclick="activateSecretRoom()"></div>
+
+  <!-- Secret Room Button -->
+  <div id="secret-room" class="secret-room">
+    <a href="cathedral.png" target="_blank">Enter the Hidden Chamber</a>
+  </div>
 
   <div class="footer">
     Vox in codice, non in carne.<br>
     — Dreamcatcher Listening
   </div>
+
+  <script>
+    function activateSecretRoom() {
+      localStorage.setItem('foundPortal', 'true');
+      document.getElementById('secret-room').style.display = 'block';
+    }
+
+    window.onload = function() {
+      if (localStorage.getItem('foundPortal') === 'true') {
+        document.getElementById('secret-room').style.display = 'block';
+      }
+    }
+  </script>
 
 </body>
 </html>
