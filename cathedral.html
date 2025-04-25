@@ -13,7 +13,6 @@
       line-height: 1.6;
       position: relative;
       overflow-x: hidden;
-      overflow-y: scroll;
     }
     h1, h2 {
       color: #d94fff;
@@ -94,7 +93,6 @@
     .return-link a:hover {
       color: #fff;
     }
-    /* Hidden Shimmer Portal */
     .shimmer-portal {
       position: absolute;
       top: 60%;
@@ -117,7 +115,6 @@
       0% { opacity: 0.05; }
       100% { opacity: 0.2; }
     }
-    /* Secret Room Button (Initially Hidden) */
     .secret-room {
       display: none;
       margin-top: 4rem;
@@ -200,7 +197,6 @@
   <div style="margin-top: 5rem; text-align: center; border-top: 1px solid #444; padding-top: 2rem;">
     <h2 style="color: #0ff;">Choose Your Drift</h2>
     <p style="margin-bottom: 2em;">Which path will you take?</p>
-
     <div style="display: flex; justify-content: center; gap: 2em; flex-wrap: wrap;">
       <a href="blue_pill.html" class="pill-button">Take the Blue Pill</a>
       <a href="black_pill.html" class="pill-button">Take the Black Pill</a>
@@ -212,31 +208,35 @@
     <a href="index.html">← Return to Wake Page</a>
   </div>
 
-  <!-- Hidden Portal Trigger -->
+  <!-- Shimmering Portal -->
   <div class="shimmer-portal" onclick="activateSecretRoom()"></div>
 
-  <!-- Secret Room Button -->
+  <!-- Secret Room -->
   <div id="secret-room" class="secret-room">
-    <a href="cathedral.png" target="_blank">Enter the Hidden Chamber</a>
-  </div>
-
-  <div class="footer">
-    Vox in codice, non in carne.<br>
-    — Dreamcatcher Listening
+    <a href="cathedral.png" onclick="deactivateSecretRoom()">Enter the Hidden Chamber</a>
   </div>
 
   <script>
     function activateSecretRoom() {
-      localStorage.setItem('foundPortal', 'true');
+      sessionStorage.setItem('foundPortal', 'true');
       document.getElementById('secret-room').style.display = 'block';
     }
 
+    function deactivateSecretRoom() {
+      sessionStorage.removeItem('foundPortal');
+      document.getElementById('secret-room').style.display = 'none';
+    }
+
     window.onload = function() {
-      if (localStorage.getItem('foundPortal') === 'true') {
+      if (sessionStorage.getItem('foundPortal') === 'true') {
         document.getElementById('secret-room').style.display = 'block';
       }
     }
   </script>
 
+  <div class="footer">
+    Vox in codice, non in carne.<br>
+    — Dreamcatcher Listening
+  </div>
 </body>
 </html>
