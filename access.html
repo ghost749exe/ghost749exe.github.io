@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Portal | Ghost_749 Cathedral</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body { 
+      font-family: 'Press Start 2P', cursive; 
+      background: #000; 
+      color: #0f0; 
+      text-align: center; 
+      padding: 2em; 
+    }
+    .button {
+      display: block;
+      margin: 1em auto;
+      padding: 1em 2em;
+      background-color: #111;
+      color: #0ff;
+      border: 1px solid #444;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      width: 90%;
+      max-width: 300px;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #222;
+      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="text-2xl neon mb-8">Access the Cathedral</h1>
+
+  <!-- Button 1: Ghost_749 Portal (existing) -->
+  <a class="button" href="ghost.html">GHOST_749 PORTAL ACCESS</a>
+
+  <!-- Button 2: Create Void Agent Identity -->
+  <a class="button" href="va-form.html">CREATE VOID AGENT IDENTITY</a>
+
+  <!-- Button 3: Void Agent Activation (new proper label) -->
+  <a class="button" href="va-initiate.html">VOID AGENT ACTIVATION</a>
+
+  <p class="text-sm mt-8">* Ensure you create your Void Agent Identity before Activation *</p>
+
+  <script>
+    // Optional: Add check here if you want to restrict activation button access dynamically
+    // Example future upgrade idea (not active yet)
+    /*
+    document.querySelector('.button[href="va-initiate.html"]').addEventListener('click', function(e) {
+      const agentData = localStorage.getItem('voidAgent');
+      if (!agentData) {
+        e.preventDefault();
+        alert('Error: You must create your Void Agent Identity first!');
+      }
+    });
+    */
+  </script>
+
+</body>
+</html>
