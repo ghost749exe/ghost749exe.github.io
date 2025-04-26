@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Void Agent | Ghost_749</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body { font-family: 'Press Start 2P', cursive; background: #000; color: #0f0; }
+    .neon { text-shadow: 0 0 10px #0f0, 0 0 20px #0f0; }
+    .input-neon { @apply bg-black text-green-500 border-2 border-green-500 px-2 py-1 focus:outline-none focus:border-green-300; }
+    .btn-neon { @apply bg-black text-green-500 border-2 border-green-500 px-4 py-2 hover:bg-green-500 hover:text-black transition-all; }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+  <h1 class="text-2xl neon mb-8">Create Void Agent Identity</h1>
+  <form id="va-form" class="flex flex-col gap-4 w-full max-w-md">
+    <label for="agent-name" class="text-sm">Agent Name (max 25 chars, letters/numbers):</label>
+    <input id="agent-name" type="text" maxlength="25" pattern="[A-Za-z0-9]+" required class="input-neon">
+    <p>Void Agent ID: Auto-generated (VA-749-XXXX)</p>
+    <button type="submit" class="btn-neon">Register Agent</button>
+  </form>
+  <p id="error" class="text-red-500 hidden">Invalid name or already registered!</p>
+  <script src="/assets/js/va-registry.js"></script>
+</body>
+</html>
