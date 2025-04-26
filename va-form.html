@@ -15,13 +15,37 @@
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen p-4">
   <h1 class="text-2xl neon mb-8">Create Void Agent Identity</h1>
+  
   <form id="va-form" class="flex flex-col gap-4 w-full max-w-md">
     <label for="agent-name" class="text-sm">Agent Name (max 25 chars, letters/numbers):</label>
     <input id="agent-name" type="text" maxlength="25" pattern="[A-Za-z0-9]+" required class="input-neon">
-    <p>Void Agent ID: Auto-generated (VA-749-XXXX)</p>
-    <button type="submit" class="btn-neon">Register Agent</button>
+    <button type="submit" class="btn-neon mt-4">Register Agent</button>
   </form>
-  <p id="error" class="text-red-500 hidden">Invalid name or already registered!</p>
-  <script src="/assets/js/va-registry.js"></script>
+
+  <p id="error" class="text-red-500 hidden mt-4">Invalid name or already registered!</p>
+
+  <script>
+    document.getElementById('va-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const agentName = document.getElementById('agent-name').value.trim();
+      
+      if (!agentName || agentName.length > 25) {
+        document.getElementById('error').classList.remove('hidden');
+        return;
+      }
+
+      // Generate Void Agent ID
+      const agentId = 'VA-749-' + Math.floor(1000 + Math.random() * 9000);
+
+      // Store data
+      localStorage.setItem('voidAgentName', agentName);
+      localStorage.setItem('voidAgentId', agentId);
+
+      // Redirect to Secret Room
+      window.location.href = 'va-initiate.html';
+    });
+  </script>
+
 </body>
 </html>
