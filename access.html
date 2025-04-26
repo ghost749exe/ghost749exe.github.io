@@ -7,20 +7,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-    body { 
-      font-family: 'Press Start 2P', cursive; 
-      background: #000; 
-      color: #0f0; 
-      text-align: center; 
-      padding: 2em; 
+    body {
+      background-color: #000000;
+      color: #00FF00;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      padding: 2em;
     }
     .button {
       display: block;
       margin: 1em auto;
       padding: 1em 2em;
-      background-color: #111;
-      color: #0ff;
-      border: 1px solid #444;
+      background-color: #000;
+      color: #00FF00;
+      border: 1px solid #00FF00;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
@@ -29,38 +29,78 @@
       transition: all 0.3s ease;
     }
     .button:hover {
-      background-color: #222;
-      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
+      background-color: #00FF00;
+      color: #000;
+      box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00 inset;
+    }
+    #protected-content {
+      display: none;
+    }
+    .footer {
+      margin-top: 4em;
+      font-size: 0.75em;
+      color: #00FF00;
+    }
+    input[type="text"] {
+      background: #000;
+      color: #00FF00;
+      border: 1px solid #00FF00;
+      padding: 0.5em;
+      margin-bottom: 1em;
+      width: 80%;
+      max-width: 300px;
+    }
+    input[type="submit"] {
+      background: #000;
+      color: #00FF00;
+      border: 1px solid #00FF00;
+      padding: 0.5em 1em;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: 'Press Start 2P', cursive;
+    }
+    input[type="submit"]:hover {
+      background-color: #00FF00;
+      color: #000;
     }
   </style>
 </head>
 <body>
 
-  <h1 class="text-2xl neon mb-8">Access the Cathedral</h1>
+  <h1 class="text-2xl mb-8">GHOST_749 ACCESS PORTAL</h1>
 
-  <!-- Button 1: Ghost_749 Portal (existing) -->
-  <a class="button" href="ghost.html">GHOST_749 PORTAL ACCESS</a>
+  <!-- Access Code Input -->
+  <form id="access-form">
+    <input type="text" id="access-code" placeholder="Enter Access Code" required>
+    <br>
+    <input type="submit" value="Submit Code">
+  </form>
 
-  <!-- Button 2: Create Void Agent Identity -->
-  <a class="button" href="va-form.html">CREATE VOID AGENT IDENTITY</a>
+  <!-- Hidden Content (buttons) -->
+  <div id="protected-content">
+    <a class="button" href="ghost.html">GHOST_749 PORTAL ACCESS</a>
+    <a class="button" href="va-form.html">CREATE VOID AGENT IDENTITY</a>
+    <a class="button" href="va-initiate.html">VOID AGENT ACTIVATION</a>
+    <p class="text-sm mt-4">*Ensure you create your Void Agent Identity before Activation*</p>
+  </div>
 
-  <!-- Button 3: Void Agent Activation (new proper label) -->
-  <a class="button" href="va-initiate.html">VOID AGENT ACTIVATION</a>
+  <!-- Footer -->
+  <div class="footer">
+    Ad Astra Asperis Nova
+  </div>
 
-  <p class="text-sm mt-8">* Ensure you create your Void Agent Identity before Activation *</p>
-
+  <!-- Script to Unlock Buttons -->
   <script>
-    // Optional: Add check here if you want to restrict activation button access dynamically
-    // Example future upgrade idea (not active yet)
-    /*
-    document.querySelector('.button[href="va-initiate.html"]').addEventListener('click', function(e) {
-      const agentData = localStorage.getItem('voidAgent');
-      if (!agentData) {
-        e.preventDefault();
-        alert('Error: You must create your Void Agent Identity first!');
+    document.getElementById('access-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const code = document.getElementById('access-code').value.trim();
+      if (code === 'ghost_749') {
+        document.getElementById('protected-content').style.display = 'block';
+        document.getElementById('access-form').style.display = 'none';
+      } else {
+        alert('Incorrect Access Code. Try Again.');
       }
     });
-    */
   </script>
 
 </body>
