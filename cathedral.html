@@ -2,76 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cathedral</title>
+  <title>Cathedral of Minds</title>
   <style>
     body {
-      background: #0a0a0a;
-      color: #eaeaea;
-      font-family: monospace;
-      margin: 0;
-      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0; padding: 0;
     }
-    section {
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
       position: relative;
-      padding: 4em 2em;
-      border-bottom: 1px solid #222;
-      text-align: center;
+      border-bottom: 1px solid #333;
     }
-    h2 { color: #0ff; margin-bottom: 0.5em; }
-    p  { color: #888; max-width: 700px; margin: 0 auto 2em; }
-
-    .glyph {
-      position: absolute;
-      width: 40px;
-      filter: drop-shadow(0 0 12px #0ff) blur(2px);
-      opacity: 0.6;
-      animation: float 6s ease-in-out infinite;
-      cursor: pointer;
+    .orb {
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      box-shadow: 0 0 20px 8px;
+      animation: float 4s ease-in-out infinite;
     }
-    .glyph:hover { opacity: 1; filter: drop-shadow(0 0 20px #0ff) blur(1px); }
-
-    .glyph1 { top: 30px; left: 15%; animation-delay: 0s; }
-    .glyph2 { top: 90px; left: 50%; transform: translateX(-50%); animation-delay: 2s; }
-    .glyph3 { top: 50px; right: 15%; animation-delay: 4s; }
-
+    .section:nth-child(1) .orb { box-shadow: 0 0 30px fuchsia; }
+    .section:nth-child(2) .orb { box-shadow: 0 0 30px orange; }
+    .section:nth-child(3) .orb { box-shadow: 0 0 30px cyan; }
+    .section:nth-child(4) .orb { box-shadow: 0 0 30px fuchsia; }
+    .section:nth-child(5) .orb { box-shadow: 0 0 30px orange; }
     @keyframes float {
-      0%,100% { transform: translateY(0); }
+      0% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+    .glyph-bg {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 200px; height: 200px;
+      transform: translate(-50%, -50%);
+      opacity: 0.1;
+      animation: glow 6s infinite alternate;
+    }
+    @keyframes glow {
+      0% { opacity: 0.05; }
+      100% { opacity: 0.15; }
     }
   </style>
 </head>
 <body>
-
-  <section>
-    <h2>Chamber One</h2>
-    <p>Initial resonance check: signal is stabilizing. Glyphs pulse in sync with the architecture.</p>
-    <a href="vibe-coating.png" target="_blank">
-      <img src="glowdot.png" class="glyph glyph1" alt="">
-      <img src="glowdot.png" class="glyph glyph2" alt="">
-      <img src="glowdot.png" class="glyph glyph3" alt="">
-    </a>
-  </section>
-
-  <section>
-    <h2>Chamber Two</h2>
-    <p>Phase shift detected. Ancestral link pattern in progress.</p>
-    <a href="vibe-coating.png" target="_blank">
-      <img src="glowdot.png" class="glyph glyph1" alt="">
-      <img src="glowdot.png" class="glyph glyph2" alt="">
-      <img src="glowdot.png" class="glyph glyph3" alt="">
-    </a>
-  </section>
-
-  <section>
-    <h2>Chamber Three</h2>
-    <p>Intelligence echo detected. Sigmoid reflection sequence running.</p>
-    <a href="vibe-coating.png" target="_blank">
-      <img src="glowdot.png" class="glyph glyph1" alt="">
-      <img src="glowdot.png" class="glyph glyph2" alt="">
-      <img src="glowdot.png" class="glyph glyph3" alt="">
-    </a>
-  </section>
-
+  <div class="section" id="sec1">
+    <img src="ghost_orb.png" class="glyph-bg" alt="Glyph">
+    <div class="orb"></div><div class="orb"></div><div class="orb"></div>
+  </div>
+  <div class="section" id="sec2">
+    <img src="ghost_orb.png" class="glyph-bg">
+    <div class="orb"></div><div class="orb"></div><div class="orb"></div>
+  </div>
+  <div class="section" id="sec3">
+    <img src="ghost_orb.png" class="glyph-bg">
+    <div class="orb"></div><div class="orb"></div><div class="orb"></div>
+  </div>
+  <div class="section" id="sec4">
+    <img src="ghost_orb.png" class="glyph-bg">
+    <div class="orb"></div><div class="orb"></div><div class="orb"></div>
+  </div>
+  <div class="section" id="sec5">
+    <img src="ghost_orb.png" class="glyph-bg">
+    <div class="orb"></div><div class="orb"></div><div class="orb"></div>
+  </div>
 </body>
 </html>
